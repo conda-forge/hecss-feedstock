@@ -14,7 +14,7 @@ build:
   number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
   entry_points:
-    - "hecss_sampler = hecss.cli:_hecss_sampler"
+    - "hecss_sampler = hecss.cli:hecss_sampler"
 
 requirements:
   host:
