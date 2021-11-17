@@ -1,5 +1,5 @@
 {% set name = "hecss" %}
-{% set version = "0.3.17" %}
+{% set version = "0.3.18" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cd76fe825cd69f6a9fb2a22863e44b17bb64f18b6cd05ce7cf813f23e1a81d60
+  sha256: 543d0589478088b73fa30651fd4dd92b5dd3aba9e7efb373e1f14e4f50a8f2b7
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - "hecss_sampler = hecss.cli:hecss_sampler"
+    - hecss_sampler = hecss.cli:hecss_sampler
 
 requirements:
   host:
@@ -38,14 +38,14 @@ test:
     - pip check
     - hecss_sampler -V
     - hecss_sampler -h
-    
+
 
 about:
   home: https://jochym.gitlab.io/hecss
   license: GPL-3.0-or-later
   license_family: GPL3
   license_file: LICENSE
-  summary: 'High Efficiency Configuration Space Sampler'
+  summary: High Efficiency Configuration Space Sampler
   description: |
     HECSS is a Markow chain Monte-Carlo, configuration space sampler using 
     Metropolis-Hastings algorithm for probablity distribution sampling. 
