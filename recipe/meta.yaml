@@ -1,5 +1,5 @@
 {% set name = "hecss" %}
-{% set version = "0.3.12" %}
+{% set version = "0.3.17" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cfbba2bf24e2c5a903a1546bcdf446692b649b6e768179d6d28a3256a61d6775
+  sha256: cd76fe825cd69f6a9fb2a22863e44b17bb64f18b6cd05ce7cf813f23e1a81d60
 
 build:
   noarch: python
@@ -25,6 +25,8 @@ requirements:
     - tqdm
     - click
     - ase
+    - numpy
+    - scipy
 
 test:
   imports:
@@ -34,7 +36,9 @@ test:
     - pip
   commands:
     - pip check
-    - hecss_sampler --help
+    - hecss_sampler -V
+    - hecss_sampler -h
+    
 
 about:
   home: https://jochym.gitlab.io/hecss
