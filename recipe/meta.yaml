@@ -14,7 +14,8 @@ build:
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - hecss_sampler = hecss.cli:_hecss_sampler
+    - hecss_sampler = hecss.cli:_hecss_sampler 
+    - hecss = hecss.cli:hecss_sampler
 
 requirements:
   host:
@@ -24,6 +25,7 @@ requirements:
     - python >=3.6
     - tqdm
     - click
+    - fastcore
     - ase
 
 test:
@@ -35,6 +37,8 @@ test:
   commands:
     - pip check
     - hecss_sampler --help
+    - hecss --help
+    - hecss -V "TEST"
 
 about:
   home: https://jochym.gitlab.io/hecss
