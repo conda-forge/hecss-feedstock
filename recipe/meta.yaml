@@ -1,5 +1,5 @@
 {% set name = "hecss" %}
-{% set version = "0.3.18" %}
+{% set version = "0.3.19" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 543d0589478088b73fa30651fd4dd92b5dd3aba9e7efb373e1f14e4f50a8f2b7
+  sha256: 46f031a5e88bdc42d3cb00cac78071341da3acf0e92e2f1c9822f1326134ac07
 
 build:
   noarch: python
