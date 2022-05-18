@@ -25,6 +25,7 @@ requirements:
     - tqdm
     - click
     - ase
+    - spglib
     - numpy
     - scipy
 
@@ -38,6 +39,9 @@ test:
     - pip check
     - hecss_sampler -V
     - hecss_sampler -h
+    - plot_stats -V
+    - plot_bands -V
+    - calculate_xscale -V
 
 
 about:
